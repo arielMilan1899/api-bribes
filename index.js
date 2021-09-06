@@ -10,7 +10,7 @@ const app = express();
 const port = 5000;
 
 // Welcome message
-app.get('/', (req, res) => res.send('Welcome to Gateway api'));
+app.get('/', (req, res) => res.send('Welcome'));
 
 //Use cors
 app.use(cors());
