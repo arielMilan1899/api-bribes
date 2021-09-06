@@ -1,6 +1,7 @@
 //Bribes controller.js
 const {body, validationResult} = require('express-validator');
 const {ValidationError} = require("../helpers/error");
+const {minBribes} = require("./algorithms");
 
 const post = (req) => {
 
@@ -15,7 +16,7 @@ const post = (req) => {
     const {queue} = req.body;
     const numbers = queue.split(' ').map(Number);
 
-    return Promise.resolve(numbers);
+    return Promise.resolve(minBribes(numbers));
 };
 const validate = () => {
 
